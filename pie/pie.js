@@ -6,10 +6,10 @@ Highcharts.chart('container', {
         plotShadow: false,
         type: 'pie'
     },
-    title: {
-        text: 'Variety of Wine in the Province',
-        align: 'left'
-    },
+    // title: {
+    //     text: 'Variety of Wine in the Province',
+    //     align: 'left'
+    // },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
     },
@@ -29,10 +29,13 @@ Highcharts.chart('container', {
         }
     },
     series: [{
-        name: 'Variety(Type of Wine)',
+        name: 'Province(State)',
         colorByPoint: true,
         data: {
             csvURL: '...\Resources\winemag-data-130k-v2.csv'
+            //filter data to see what state was the most documented
+
+            //then filter the largest data to see the top wine of that province 
         }
         //    [{
         //     name: 'Chrome',
@@ -66,4 +69,10 @@ Highcharts.chart('container', {
         // }]
         
     }]
+});
+
+function init( {
+    Highcharts.json(csvURL).then((data) => {
+
+    })
 });
