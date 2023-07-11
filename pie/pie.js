@@ -7,7 +7,7 @@ Highcharts.chart('container', {
         type: 'pie'
     },
     title: {
-        text: 'Browser market shares in May, 2020',
+        text: 'Variety of Wine in the Province',
         align: 'left'
     },
     tooltip: {
@@ -29,37 +29,41 @@ Highcharts.chart('container', {
         }
     },
     series: [{
-        name: 'Brands',
+        name: 'Variety(Type of Wine)',
         colorByPoint: true,
-        data: [{
-            name: 'Chrome',
-            y: 70.67,
-            sliced: true,
-            selected: true
-        }, {
-            name: 'Edge',
-            y: 14.77
-        },  {
-            name: 'Firefox',
-            y: 4.86
-        }, {
-            name: 'Safari',
-            y: 2.63
-        }, {
-            name: 'Internet Explorer',
-            y: 1.53
-        },  {
-            name: 'Opera',
-            y: 1.40
-        }, {
-            name: 'Sogou Explorer',
-            y: 0.84
-        }, {
-            name: 'QQ',
-            y: 0.51
-        }, {
-            name: 'Other',
-            y: 2.6
-        }]
+        data: {
+            csvURL: '...\Resources\winemag-data-130k-v2.csv'
+        }
+        //    [{
+        //     name: 'Chrome',
+        //     y: 70.67,
+        //     sliced: true,
+        //     selected: true
+        // }, {
+        //     name: 'Edge',
+        //     y: 14.77
+        // },  {
+        //     name: 'Firefox',
+        //     y: 4.86
+        // }, {
+        //     name: 'Safari',
+        //     y: 2.63
+        // }, {
+        //     name: 'Internet Explorer',
+        //     y: 1.53
+        // },  {
+        //     name: 'Opera',
+        //     y: 1.40
+        // }, {
+        //     name: 'Sogou Explorer',
+        //     y: 0.84
+        // }, {
+        //     name: 'QQ',
+        //     y: 0.51
+        // }, {
+        //     name: 'Other',
+        //     y: 2.6
+        // }]
+        
     }]
 });
