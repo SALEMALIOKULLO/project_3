@@ -48,11 +48,12 @@ def piedata():
 
     #Count the rows in results (I believe it should be the equivalent of the amount of states that were logged)
     print("Number of rows in results", len(results))
-    #print the first 10 results
+    #pretty print the first 5 results
     pprint(results[0:5])
-    
+
     # add filtering logic here, and set filteredData to it
-    filteredData = data
+    #will need to change
+    filteredData = results
     return dumps(filteredData)
 
 # load the template / html
