@@ -5,12 +5,11 @@ Highcharts.chart('container', {
     },
 
     title: {
-        text: 'Labor Costs in Europe, 2016'
+        text: 'Wine, Country vs Price'
     },
 
     subtitle: {
-        text: 'Source: <a href="http://ec.europa.eu/eurostat/web/' +
-            'labour-market/labour-costs/main-tables">eurostat</a>'
+        text: 'Source: winemag-data-130k-v2.csv' + 'Salem Okullos research'
     },
 
     xAxis: {
@@ -18,7 +17,7 @@ Highcharts.chart('container', {
     },
 
     caption: {
-        text: 'Column widths are proportional to GDP'
+        text: 'Column widths are proportional to Countries wine GDP'
     },
 
     legend: {
@@ -26,35 +25,35 @@ Highcharts.chart('container', {
     },
 
     series: [{
-        name: 'Labor Costs',
+        name: 'Average Priced: Wine',
         data: [
-            ['Norway', 50.2, 335504],
-            ['Denmark', 42, 277339],
-            ['Belgium', 39.2, 421611],
-            ['Sweden', 38, 462057],
-            ['France', 35.6, 2228857],
-            ['Netherlands', 34.3, 702641],
-            ['Finland', 33.2, 215615],
-            ['Germany', 33.0, 3144050],
-            ['Austria', 32.7, 349344],
-            ['Ireland', 30.4, 275567],
-            ['Italy', 27.8, 1672438],
-            ['United Kingdom', 26.7, 2366911],
-            ['Spain', 21.3, 1113851],
-            ['Greece', 14.2, 175887],
-            ['Portugal', 13.7, 184933],
-            ['Czech Republic', 10.2, 176564],
-            ['Poland', 8.6, 424269],
-            ['Romania', 5.5, 169578]
+            ['USA', 35.57, 54504],
+            ['France', 41.1, 22093],
+            ['Italy', 39.6, 19504],
+            ['Portugal', 26.2, 5691],
+            ['Chile', 20.78, 4472],
+            ['Argintina', 24.51, 3800],
+            ['Austria', 30.76, 3345],
+            ['Australia', 35.44, 2329],
+            ['New Zealand', 26.93, 1419],
+            ['South Africa', 24.67, 1401],
+            ['Mexico', 26.78, 70],
+            ['Canada', 35.71, 257],
+            ['Uruguay', 26.4, 109],
+            ['India', 13.3, 9],
+            ['Switzerland', 85.28, 7],
+            ['Germany', 42.25, 2165],
+            ['Greece', 22.36, 466],
+            ['Isael', 31.77, 505]
 
         ],
         dataLabels: {
             enabled: true,
-            format: '€{point.y:.0f}'
+            format: '$ {point.y:.0f}'
         },
         tooltip: {
-            pointFormat: 'Labor Costs: <b>€ {point.y}/h</b><br>' +
-                'GDP: <b>€ {point.z} million</b><br>'
+            pointFormat: 'Average Price: <b>$ {point.y}</b><br>' +
+                'GDP: <b> {point.z} bottles </b><br>'
         },
         borderRadius: 3,
         colorByPoint: true
