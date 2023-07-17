@@ -50,6 +50,7 @@ fetch(url)
       y: other_counter,
     });
 
+    console.log(total_count)
     //see the list that was filtered and created
     console.log(states_list);
 
