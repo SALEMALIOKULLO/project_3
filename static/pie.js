@@ -50,6 +50,7 @@ fetch(url)
       y: other_counter,
     });
 
+    //see the list that was filtered and created
     console.log(states_list);
 
     Highcharts.chart("container", {
@@ -60,7 +61,7 @@ fetch(url)
         type: "pie",
       },
       title: {
-          text: 'Variety of Wine in the Province',
+          text: 'Most Logged Provinces/States (U.S. Only)',
           align: 'left'
       },
       tooltip: {
@@ -83,7 +84,7 @@ fetch(url)
       },
       series: [
         {
-          name: "Province(State)",
+          name: "Amount Logged",
           colorByPoint: true,
           data: states_list,
         },
