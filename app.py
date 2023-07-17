@@ -78,10 +78,29 @@ def bar():
 # loads chart data
 @app.route("/bardata")
 def bardata():
-    query = {"points": 87}
-    data = wine_table.find_one(query)
+     # match query to find only "country" where "US" is the value
+    match_query = {'$match':{"country": {'$regex': "US"}}}
+    # aggregation query that counts the number of documents grouped by "country", then "province"
+    group_query = {'$group': {'_id': {"country": "$country",
+                                      "province": "$province"}, 
+                                'count': {'$sum': 1}
+                            }
+                    }
+    #creates a dictionary to allow the pipeline to sort by "province" in alphabetical order
+    sort_values = {'$sort': {'province': 1}}
+    #puts pipeline together
+    pipeline = [match_query, group_query,sort_values]
+    #runs pipeline through aggregate method & saves results to variable
+    results = list(wine_table.aggregate(pipeline))
+
+    #Count the rows in results (I believe it should be the equivalent of the amount of states that were logged)
+    print("Number of rows in results", len(results))
+    #pretty print the first 5 results
+    pprint(results[0:5])
+
     # add filtering logic here, and set filteredData to it
-    filteredData = data
+    #will need to change
+    filteredData = results
     return dumps(filteredData)
 
 # load the template / html

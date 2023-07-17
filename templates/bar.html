@@ -1,83 +1,97 @@
-https://www.highcharts.com/demo/highcharts/variwide
+<<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Project 3</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/variwide.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">Project 3: Wine Data</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<figure class="highcharts-figure">
-    <div id="container"></div>
-    <p class="highcharts-description">
-        Variwide charts can be used to visualize a second dimension
-        in a column chart. Each data point is given a weight, in
-        addition to its value, determining the width of the column.
-        In this chart, the Y-Axis represents the labor cost of the
-        country, while the column width is proportional to the
-        country's GDP.
-    </p>
-</figure>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Charts
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/pie">Pie Chart</a>
+              <a class="dropdown-item" href="/box">Box Plot Chart</a>
+              <a class="dropdown-item" href="/bar">Bar Chart</a>
+              <a class="dropdown-item" href="/scatter">Scatter Plot Chart</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-Highcharts.chart('container', {
+<!-- beginning of pie chart display -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 jumbotron text-center">
+          <h1>bar Chart Dashboard</h1>
+          <p>by Salem Okullo</p>
 
-    chart: {
-        type: 'variwide'
-    },
+          <figure class="highcharts-figure">
+            <div id="container"></div>
+            <p class="highcharts-description">
+                Country vs. Price: comparing each Countries wine price from data analysis research of exploring how many bottles of wine each country produces in this dataset csv file provided, then discovering the averages of each countries wine price. Of the 130,000 wines provided in this csv 54,504 come from the US alone, with France and Italy next with rougly about 20,000 bottles each.
+                
+            </p>
+        </figure>
+        </div>
+      </div>
+    </div>
+<!-- end of pie chart display -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
 
-    title: {
-        text: 'Labor Costs in Europe, 2016'
-    },
-
-    subtitle: {
-        text: 'Source: <a href="http://ec.europa.eu/eurostat/web/' +
-            'labour-market/labour-costs/main-tables">eurostat</a>'
-    },
-
-    xAxis: {
-        type: 'category'
-    },
-
-    caption: {
-        text: 'Column widths are proportional to GDP'
-    },
-
-    legend: {
-        enabled: false
-    },
-
-    series: [{
-        name: 'Labor Costs',
-        data: [
-            ['Norway', 50.2, 335504],
-            ['Denmark', 42, 277339],
-            ['Belgium', 39.2, 421611],
-            ['Sweden', 38, 462057],
-            ['France', 35.6, 2228857],
-            ['Netherlands', 34.3, 702641],
-            ['Finland', 33.2, 215615],
-            ['Germany', 33.0, 3144050],
-            ['Austria', 32.7, 349344],
-            ['Ireland', 30.4, 275567],
-            ['Italy', 27.8, 1672438],
-            ['United Kingdom', 26.7, 2366911],
-            ['Spain', 21.3, 1113851],
-            ['Greece', 14.2, 175887],
-            ['Portugal', 13.7, 184933],
-            ['Czech Republic', 10.2, 176564],
-            ['Poland', 8.6, 424269],
-            ['Romania', 5.5, 169578]
-
-        ],
-        dataLabels: {
-            enabled: true,
-            format: '€{point.y:.0f}'
-        },
-        tooltip: {
-            pointFormat: 'Labor Costs: <b>€ {point.y}/h</b><br>' +
-                'GDP: <b>€ {point.z} million</b><br>'
-        },
-        borderRadius: 3,
-        colorByPoint: true
-    }]
-
-});
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="{{url_for('static', filename='bar.js')}}"></script>
+    <!-- line above connects to your javascript file-->
+  </body>
+</html>
