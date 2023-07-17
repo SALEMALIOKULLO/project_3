@@ -57,12 +57,12 @@ def piedata():
     return dumps(filteredData)
 
 # load the template / html
-@app.route("/bubble")
+@app.route("/box")
 def bubble():
-    return render_template('bubble.html')
+    return render_template('box.html')
 
 # loads chart data
-@app.route("/bubbledata")
+@app.route("/boxdata")
 def bubbledata():
     query = {"points": 87}
     data = wine_table.find_one(query)
