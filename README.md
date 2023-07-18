@@ -1,5 +1,5 @@
 # Project 3 Proposal
-## Topic: Customer Wine choice by preferences in the U.S 
+## Topic: Customer Wine choice by preferences in the U.S in 2021
 ### Introduction:
 The goal of this data analysis project is to develop a model that can display wines based on customer preferences in the United States. By leveraging a comprehensive wine dataset, we aim to gain insights into the factors that influence wine preferences that assist customers in making informed wine choices.
 ### Dataset and Preprocessing:
