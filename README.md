@@ -8,7 +8,11 @@ Link to dataset:
 https://www.kaggle.com/code/chaitanya99/wine-analysis-recommendation/input
 
 Data Visualization Charts:
-Pie
-Bar 
-Scatter
-Box
+Pie Chart - 
+![image](https://github.com/saanleu/project_3/assets/127360570/9645bdf0-a8d1-43ab-af0f-171040e53c87)
+
+Bar - 
+![image](https://github.com/saanleu/project_3/assets/127360570/cb029f63-71be-43a5-992b-b1ad8c56dfdb)
+
+Scatter - 
+Box Plot - 
